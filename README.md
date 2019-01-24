@@ -30,6 +30,7 @@ type Data struct {
 	Name  string `json:"name" tson:"name"`
 	Age   uint8  `json:"age" tson:"age"`
 	Issue *Issue `json:"issue"`
+	Random []int `json:"random"`
 }
 
 func main() {
@@ -39,6 +40,7 @@ func main() {
 			Version: "v0.1.0",
 			Bio:     "happy in codding",
 		},
+		Random: []int{1, 2, 3, 4, 5},
 	})
 
 	if jsonTmpl, err := tson.New("json").Parse(srcData); err == nil {
