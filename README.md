@@ -58,12 +58,12 @@ func main() {
 
 	// merge json content from text string template
 	jsonTmplStr := `{
-        "name": $.Name,
-        "alias": $.Alias,
-        "other": {
-            "ping": "pong",
-        },
-    }`
+            "name": $.Name,
+            "alias": $.Alias,
+            "other": {
+                "ping": "pong",
+       	    },
+    	}`
 	if jsonTmpl, err := tson.New("tson").ParseFrom(jsonTmplStr); err == nil {
 		buf := bytes.NewBuffer([1024]byte{}[:])
 		jsonTmpl.Execute(buf, &Info{
